@@ -4,7 +4,7 @@
   - name: Healthcheck
     ansible.builtin.shell: npx playwright test ./tests/sysCheck.spec.ts
     args:
-      chdir: /opt/openstack-testing
+      chdir: /opt/openstack-testing2
     register: results
     ignore_errors: true
   - debug: msg="Healthckeck suit finished"
