@@ -24,7 +24,7 @@
       chdir: /opt/openstack-testing
     shell: |
       PATH=/opt/allure-commandline/allure-2.21.0/bin:$PATH
- #     node ./node_modules/allure-single-html-file-js/combine.js ./allure-report
+      node ./node_modules/allure-single-html-file-js/combine.js ./allure-report
       
   - name: Allure open allure-report
     args:
