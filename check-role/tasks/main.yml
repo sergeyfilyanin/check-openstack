@@ -1,3 +1,6 @@
+  - name: Remove previous results
+    shell: rm -rf /opt/openstack-testing/allure-results
+    
   - name: Start T01 Administration - Cloud Service Tests
     ansible.builtin.shell: npx playwright test ./tests/T01.spec.ts >> /tmp/running-test.log
     args:
