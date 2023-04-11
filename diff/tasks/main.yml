@@ -1,0 +1,10 @@
+  - name: Remove previous results
+    shell: rm -rf /opt/openstack-testing/allure-results
+    
+  - name: Diff templates
+    ansible.builtin.shell: npx playwright test ./tests/templateDiffs.spec.ts >> /tmp/diff.log
+    args:
+      chdir: /opt/openstack-testing
+    register: results
+    ignore_errors: true
+  - debug: msg="Comparison is finished"
