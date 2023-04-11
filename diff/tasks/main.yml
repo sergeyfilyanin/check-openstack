@@ -8,3 +8,27 @@
     register: results
     ignore_errors: true
   - debug: msg="Comparison is finished"
+
+  - name: Allure generate results
+    args:
+      chdir: /opt/openstack-testing
+    shell: |
+      PATH=/opt/openstack-testing/allure-2.21.0/bin/:$PATH
+      allure generate allure-results --clean
+    register: results
+  - debug:
+      var: results.stdout_lines
+        
+  - name: Allure generate report
+    args:
+      chdir: /opt/openstack-testing
+    shell: |
+      PATH=/opt/openstack-testing/allure-2.21.0/bin/:$PATH
+      node ./node_modules/allure-single-html-file-js/combine.js ./allure-report
+
+  - name: Allure open allure-report
+    args:
+      chdir: /opt/openstack-testing
+    shell: |
+      PATH=/opt/openstack-testing/allure-2.21.0/bin/:$PATH
+      nohup allure serve -p 32300 &
