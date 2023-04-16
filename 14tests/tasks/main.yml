@@ -2,7 +2,7 @@
     shell: rm -rf /opt/openstack-testing/allure-results
     
   - name: Start N01
-    ansible.builtin.shell: npx playwright test ./tests/N1 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N1 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     register: results
@@ -10,7 +10,7 @@
   - debug: msg="Tests finished"
 
   - name: Start N02
-    ansible.builtin.shell: npx playwright test ./tests/N2 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N2 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     register: results
@@ -18,14 +18,14 @@
   - debug: msg="Tests finished"
 
   - name: Start N03
-    ansible.builtin.shell: npx playwright test ./tests/N3 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N3 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
   
   - name: Start N04
-    ansible.builtin.shell: npx playwright test ./tests/N4 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N4 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     register: results
@@ -33,7 +33,7 @@
   - debug: msg="Tests finished"
   
   - name: Start N05
-    ansible.builtin.shell: npx playwright test ./tests/N5 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N5 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     register: results
@@ -41,67 +41,67 @@
   - debug: msg="Tests finished"
 
   - name: Start N06
-    ansible.builtin.shell: npx playwright test ./tests/N6 >> /tmp/running-test.log  
+    ansible.builtin.shell: npx playwright test N6 >> /tmp/running-test.log  
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
   
   - name: Start N07
-    ansible.builtin.shell: npx playwright test ./tests/N7 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N7 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
   
   - name: Start N08
-    ansible.builtin.shell: npx playwright test ./tests/N8 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N8 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
   
   - name: Start N09
-    ansible.builtin.shell: npx playwright test ./tests/N9 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N9 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
     
   - name: Start N10
-    ansible.builtin.shell: npx playwright test ./tests/N10 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N10 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
  
   - name: Start N11
-    ansible.builtin.shell: npx playwright test ./tests/N11 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N11 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
   
   - name: Start N12
-    ansible.builtin.shell: npx playwright test ./tests/N12 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N12 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
   
   - name: Start N13
-    ansible.builtin.shell: npx playwright test ./tests/N13 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N13 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
   - debug: msg="Tests finished"
 
   - name: Start N14
-    ansible.builtin.shell: npx playwright test ./tests/N14 >> /tmp/running-test.log
+    ansible.builtin.shell: npx playwright test N14 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
-  - debug: msg="Tests finished
+  - debug: msg="Tests finished"
   
   - name: Allure generate results
     args:
