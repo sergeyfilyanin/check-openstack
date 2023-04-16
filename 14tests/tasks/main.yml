@@ -75,7 +75,7 @@
     ignore_errors: true
   - debug: msg="Tests finished"
  
-   - name: Start N11
+  - name: Start N11
     ansible.builtin.shell: npx playwright test ./tests/N11 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
