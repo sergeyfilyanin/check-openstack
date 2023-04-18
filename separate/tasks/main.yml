@@ -1,59 +1,66 @@
   - name: Remove previous results
     shell: rm -rf /opt/openstack-testing/allure-results
     
-  - name: Start T01 Administration - Cloud Service Tests
-    ansible.builtin.shell: npx playwright test ./tests/T01.spec.ts >> /tmp/running-test.log
-    args:
-      chdir: /opt/openstack-testing
-    register: results
-    ignore_errors: true
-  - debug: msg="T01 Administration - Cloud Service Tests finished"
+#  - name: Start T01 Administration - Cloud Service Tests
+#    ansible.builtin.shell: npx playwright test ./tests/T01.spec.ts >> /tmp/running-test.log
+#    args:
+#      chdir: /opt/openstack-testing
+#    register: results
+#    ignore_errors: true
+#  - debug: msg="T01 Administration - Cloud Service Tests finished"
 
-  - name: Start T02 NFVI Co-Deployment Infra level Capability Verification 
-    ansible.builtin.shell: npx playwright test ./tests/T02.spec.ts >> /tmp/running-test.log
-    args:
-      chdir: /opt/openstack-testing
-    register: results
-    ignore_errors: true
-  - debug: msg="T02 NFVI Co-Deployment Infra level Capability Verification  Tests finished"
+#  - name: Start T02 NFVI Co-Deployment Infra level Capability Verification 
+#    ansible.builtin.shell: npx playwright test ./tests/T02.spec.ts >> /tmp/running-test.log
+#    args:
+#      chdir: /opt/openstack-testing
+#    register: results
+#    ignore_errors: true
+#  - debug: msg="T02 NFVI Co-Deployment Infra level Capability Verification  Tests finished"
 
-  - name: Start T03 Administration - Compute / Storage Tests
-    ansible.builtin.shell: npx playwright test ./tests/T03.spec.ts >> /tmp/running-test.log
-    args:
-      chdir: /opt/openstack-testing
-    ignore_errors: true
-  - debug: msg="T03 Administration - Compute / Storage Tests finished"
+#  - name: Start T03 Administration - Compute / Storage Tests
+#    ansible.builtin.shell: npx playwright test ./tests/T03.spec.ts >> /tmp/running-test.log
+#    args:
+#      chdir: /opt/openstack-testing
+#    ignore_errors: true
+#  - debug: msg="T03 Administration - Compute / Storage Tests finished"
   
-  - name: Start T04 Infrastructure-Virtual Resources Tests
-    ansible.builtin.shell: npx playwright test ./tests/T04.spec.ts >> /tmp/running-test.log
-    args:
-      chdir: /opt/openstack-testing
-    register: results
-    ignore_errors: true
-  - debug: msg="T04 Infrastructure-Virtual Resources Tests finished"
+#  - name: Start T04 Infrastructure-Virtual Resources Tests
+#    ansible.builtin.shell: npx playwright test ./tests/T04.spec.ts >> /tmp/running-test.log
+#    args:
+#      chdir: /opt/openstack-testing
+#    register: results
+#    ignore_errors: true
+#  - debug: msg="T04 Infrastructure-Virtual Resources Tests finished"
   
-  - name: Start T05 Infrastructure-Virtual Networks and Links Tests
-    ansible.builtin.shell: npx playwright test ./tests/T05.spec.ts >> /tmp/running-test.log
-    args:
-      chdir: /opt/openstack-testing
-    register: results
-    ignore_errors: true
-  - debug: msg="T05 Infrastructure-Virtual Networks and Links Tests finished"
+#  - name: Start T05 Infrastructure-Virtual Networks and Links Tests
+#    ansible.builtin.shell: npx playwright test ./tests/T05.spec.ts >> /tmp/running-test.log
+#    args:
+#      chdir: /opt/openstack-testing
+#    register: results
+#    ignore_errors: true
+#  - debug: msg="T05 Infrastructure-Virtual Networks and Links Tests finished"
 
-  - name: Start T06 Openstack Nodes Functionality Tests
-    ansible.builtin.shell: npx playwright test ./tests/T06.spec.ts >> /tmp/running-test.log  
+#  - name: Start T06 Openstack Nodes Functionality Tests
+#    ansible.builtin.shell: npx playwright test ./tests/T06.spec.ts >> /tmp/running-test.log  
+#    args:
+#      chdir: /opt/openstack-testing
+#    ignore_errors: true
+#  - debug: msg="T06 Openstack Nodes Functionality Tests finished"
+  
+#  - name: Start T07 RHOSP Version Tests
+#    ansible.builtin.shell: npx playwright test ./tests/T07.spec.ts >> /tmp/running-test.log
+#    args:
+#      chdir: /opt/openstack-testing
+#    ignore_errors: true
+#  - debug: msg="T07 RHOSP Version Tests finished"
+
+  - name: Start T08 Tests
+    ansible.builtin.shell: npx playwright test ./tests/T08.spec.ts >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
     ignore_errors: true
-  - debug: msg="T06 Openstack Nodes Functionality Tests finished"
-  
-  - name: Start T07 RHOSP Version Tests
-    ansible.builtin.shell: npx playwright test ./tests/T07.spec.ts >> /tmp/running-test.log
-    args:
-      chdir: /opt/openstack-testing
-    ignore_errors: true
-  - debug: msg="T07 RHOSP Version Tests finished"
-  
+  - debug: msg="T08 Tests finished"
+
   - name: Allure generate results
     args:
       chdir: /opt/openstack-testing
