@@ -1,7 +1,7 @@
   - name: Remove previous results
     shell: rm -rf /opt/openstack-testing/allure-results
 
-   - name: Start N11
+  - name: Start N11
     ansible.builtin.shell: npx playwright test N11 >> /tmp/running-test.log
     args:
       chdir: /opt/openstack-testing
