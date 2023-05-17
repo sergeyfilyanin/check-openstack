@@ -1,0 +1,8 @@
+---
+- name: "Live migration"
+  hosts: testing
+  become_user: root
+
+
+  roles:
+    - N05
