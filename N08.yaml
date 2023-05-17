@@ -1,0 +1,8 @@
+---
+- name: "Rebuild VM"
+  hosts: testing
+  become_user: root
+
+
+  roles:
+    - N08
