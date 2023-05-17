@@ -1,0 +1,8 @@
+---
+- name: "Controller function verification"
+  hosts: testing
+  become_user: root
+
+
+  roles:
+    - N11
